@@ -81,6 +81,6 @@ if __name__ == '__main__':
         print('INFORME UM VALOR PARA SAQUE!')
     caixa_eletronico.sacar(valor)
     
-    
+print('TESTE PARA GIT')    
     
 
