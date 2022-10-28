@@ -35,20 +35,21 @@ class CaixaEletronico:
             print(100 * '*')
         sleep(1)
         opc = ''
-        try:
-            opc = str(input('DESEJA REALIZAR OUTRA OPERAÇÃO (SIM/NÃO): ')).strip().upper()[0]
-        except IndexError:
-            print('VALOR INVÁLIDO')
-            print(100 * '*')
-        while opc not in 'SN':
-            opc = str(input('VALOR INVÁLIDO, DIGITE SIM PARA CONTINUAR/NÃO PARA FINALIZAR: ')).strip().upper()[0]
-            print(100 * '*')
-        if opc == 'S':
-            valor = int(input('INFORME UM VALOR PARA SAQUE: '))
-            print(100 * '*')
-            caixa_eletronico.sacar(valor)
-        if opc == 'N':
-            breakpoint
+        while True:
+            try:
+                opc = str(input('DESEJA REALIZAR OUTRA OPERAÇÃO (SIM/NÃO): ')).strip().upper()[0]
+            except IndexError:
+                print('VALOR INVÁLIDO')
+                print(100 * '*')
+            while opc not in 'SN':
+                opc = str(input('VALOR INVÁLIDO, DIGITE SIM PARA CONTINUAR/NÃO PARA FINALIZAR: ')).strip().upper()[0]
+                print(100 * '*')
+            if opc == 'S':
+                valor = int(input('INFORME UM VALOR PARA SAQUE: '))
+                print(100 * '*')
+                caixa_eletronico.sacar(valor)
+            if opc == 'N':
+                break
          
         self.encerrar_atendimento()
      
