@@ -6,10 +6,10 @@ titulo = 'CAIXA ELETRÔNICO ULTIMA'
 print(titulo.center(100,'*'))
 
 class CaixaEletronico:
-    def __init__(self, nome, cor):
+    def __init__(self, nome):
         self.notas = [100, 50, 20, 10, 5]
         self.nome_banco = nome
-        self.cor = cor
+        
 
     def sacar(self,valor_saque):
         valor = valor_saque
@@ -56,7 +56,7 @@ class CaixaEletronico:
         hora = datetime.today().hour
                        
         sleep(2)
-        print(f'OBRIGADO POR UTILIZAR O {self.nome_banco} da cor {self.cor}')
+        print(f'OBRIGADO POR UTILIZAR O {self.nome_banco}')
         
         if hora > 0 and hora < 12:
             print('TENHA UM BOM DIA!')
@@ -73,7 +73,7 @@ class CaixaEletronico:
 
 
 if __name__ == '__main__':
-    caixa_eletronico = CaixaEletronico('BANCO ULTIMA', 'LARANJA')
+    caixa_eletronico = CaixaEletronico('BANCO ULTIMA')
     valor = 0
     try:
         valor = int(input('INFORME UM VALOR PARA SAQUE: '))
@@ -81,6 +81,5 @@ if __name__ == '__main__':
         print('INFORME UM VALOR PARA SAQUE!')
     caixa_eletronico.sacar(valor)
     
-print('TESTE PARA GIT')    
-print('TESTANDO PARA GIT E GIT HUB')    
+
 
