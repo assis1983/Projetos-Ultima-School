@@ -80,6 +80,8 @@ if __name__ == '__main__':
         valor = int(input('INFORME UM VALOR PARA SAQUE: '))
     except ValueError:
         print('INFORME UM VALOR PARA SAQUE!')
+        print('VALORES EM MOEDA CORRENTE!')
+
         print('OBRIGADO!')
         print('VALORES EM MOEDA CORRENTE!')
     caixa_eletronico.sacar(valor)
