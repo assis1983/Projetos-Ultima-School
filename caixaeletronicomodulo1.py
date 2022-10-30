@@ -2,7 +2,7 @@ from datetime import datetime
 from time import sleep
 from unittest.loader import VALID_MODULE_NAME
 
-titulo = 'CAIXA ELETRÔNICO ULTIMA'
+titulo = 'CAIXA BANCO DOS BANCOS' 
 print(titulo.center(100,'*'))
 
 class CaixaEletronico:
