@@ -35,4 +35,4 @@ while True:
     elif forma_pagamento == 5:
         break
     
-print('OBRIGADO')
+print('OBRIGADO POR UTILIZAR O PROGRAMA')
