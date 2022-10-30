@@ -74,7 +74,7 @@ class CaixaEletronico:
 
 
 if __name__ == '__main__':
-    caixa_eletronico = CaixaEletronico('BANCO ULTIMA')
+    caixa_eletronico = CaixaEletronico('BANCO EDER ASSIS')
     valor = 0
     try:
         valor = int(input('INFORME UM VALOR PARA SAQUE: '))
