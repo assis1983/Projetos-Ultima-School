@@ -32,8 +32,6 @@ while True:
         valor_final = valor_produto + (valor_produto * 0.10)
         print(f'Valor Final para pagamento em mais de duas vezes R$ {valor_final:.2f}.')
     
-    elif forma_pagamento == 5:
-        break
+    break
     
 print('OBRIGADO POR UTILIZAR O PROGRAMA')
-print('TESTE')
