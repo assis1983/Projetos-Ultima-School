@@ -6,7 +6,7 @@ print('2 - PAGAMENTO À VISTA NO CARTÃO DE CRÉDITO, RECEBE 10% DE DESCONTO')
 print('3 - PAGAMENTO EM DUAS VEZES, PREÇO NORMAL DO PRODUTO')
 print('4 - PAGAMENTO EM MAIS DE DUAS VEZES, PREÇO NORMAL DO PRODUTO,MAIS JUROS DE 10%')
 print('5 - SAIR')
-forma_pagamento = 0
+ 
 while True:
     try:
         valor_produto = float(input('Digite o valor do produto: '))
@@ -32,6 +32,13 @@ while True:
         valor_final = valor_produto + (valor_produto * 0.10)
         print(f'Valor Final para pagamento em mais de duas vezes R$ {valor_final:.2f}.')
     
-    break
+    sair = ' '
+    while sair not in 'SN':
+        try:
+            sair =str(input('DESEJA CONTINUAR? SIM/NÃO: ')).strip().upper()[0]
+        except IndexError:
+            print('VALOR INVÁLIDO, DIGITE NOVAMENTE!')
+    if sair == 'N':
+        break
     
 print('OBRIGADO POR UTILIZAR O PROGRAMA')
