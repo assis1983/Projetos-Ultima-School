@@ -44,6 +44,7 @@ class CaixaEletronico:
             while opc not in 'SN':
                 opc = str(input('VALOR INVÁLIDO, DIGITE SIM PARA CONTINUAR/NÃO PARA FINALIZAR: ')).strip().upper()[0]
                 print(100 * '*')
+                print(100 * '*')
             if opc == 'S':
                 valor = int(input('INFORME UM VALOR PARA SAQUE: '))
                 print(100 * '*')
