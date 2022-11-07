@@ -5,10 +5,10 @@ print('1 - PAGAMENTO À VISTA EM DINHIERO, RECEBE 15% DE DESCONTO')
 print('2 - PAGAMENTO À VISTA NO CARTÃO DE CRÉDITO, RECEBE 10% DE DESCONTO')
 print('3 - PAGAMENTO EM DUAS VEZES, PREÇO NORMAL DO PRODUTO')
 print('4 - PAGAMENTO EM MAIS DE DUAS VEZES, PREÇO NORMAL DO PRODUTO,MAIS JUROS DE 10%')
-forma_pagamento = 0 
+print(100 * '*')
 while True:
     try:
-        valor_produto = float(input('Digite o valor do produto: '))
+        valor_produto = float(input('DIGITE O VALOR DO PRODUTO: '))
     except ValueError:
         print('VALOR INVÁLIDO')
     try:
