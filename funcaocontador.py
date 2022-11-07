@@ -12,14 +12,12 @@ def cont():
         time.sleep(0.3)
         print(i)
 cont ()
-
 resposta = ' '
-while resposta not in 'SN':
-
+while True:
     inicio = int(input('\nDigite o valor para Início da Contagem: '))
-        
+    
     fim = int(input('\nDIgite o Fim da Contagem: '))
-   
+  
     passo = int(input('\nDigite o Passo da Contagem: '))
        
     print(f'\nContagem de {inicio} até {fim} de {passo} em {passo}.')
