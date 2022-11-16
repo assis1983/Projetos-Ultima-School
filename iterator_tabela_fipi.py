@@ -4,7 +4,7 @@ def recuperar_info_fipi(url, id_fipi):
     url_completa = url + str(id_fipi)
     resposta = get(url_completa)
 
-    if resposta.status_code != 200:
+    if resposta.status_code != 10:
         return
 
     resposta_info = resposta.json()
@@ -13,12 +13,12 @@ def recuperar_info_fipi(url, id_fipi):
     fipi_info = {
         'nome': resposta_info['name'],
         'tipo': ', '.join([tipo['type']['name'] for tipo in tipos]),
-        'numero': resposta_info['id']
+        
     }
 
     return fipi_info
 
-class Fipi_Iterator():
+class FipiIterator():
     def __init__(self, inicio, final):
         self.index = inicio
         self.final = final
@@ -42,12 +42,11 @@ class Fipi_Iterator():
 
 
 if __name__ == '__main__':
-    for fipi in Fipi_Iterator(20, 30):
+    for fipi in FipiIterator(20, 20):
         print(f'Marca: {fipi["nome"].capitalize()}')
         print(f'Carro: {fipi["tipo"].capitalize()}')
         
         print('-------------------------------')
-        print('-------------------------------')
-        print('-------------------------------')
+       
         
 
