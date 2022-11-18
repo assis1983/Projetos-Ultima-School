@@ -4,7 +4,7 @@ def recuperar_info_fipi(url, id_fipi):
     url_completa = url + str(id_fipi)
     resposta = get(url_completa)
 
-    if resposta.status_code != 10:
+    if resposta.status_code != 200:
         return
 
     resposta_info = resposta.json()
@@ -13,7 +13,7 @@ def recuperar_info_fipi(url, id_fipi):
     fipi_info = {
         'nome': resposta_info['name'],
         'tipo': ', '.join([tipo['type']['name'] for tipo in tipos]),
-        
+        'numero': resposta_info['id']
     }
 
     return fipi_info
@@ -22,7 +22,7 @@ class FipiIterator():
     def __init__(self, inicio, final):
         self.index = inicio
         self.final = final
-        self.url = 'https://deividfortuna.github.io/fipe/'
+        self.url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas'
         
     def __iter__(self):
         return self
@@ -42,9 +42,11 @@ class FipiIterator():
 
 
 if __name__ == '__main__':
-    for fipi in FipiIterator(20, 20):
+    for fipi in FipiIterator(1, 30):
         print(f'Marca: {fipi["nome"].capitalize()}')
         print(f'Carro: {fipi["tipo"].capitalize()}')
+        print(f'Número: {fipi["numero"]}')
+        print('-------------------------------')
         
         print('-------------------------------')
        
