@@ -1,8 +1,9 @@
-from requests import get
+import requests
+
 
 def recuperar_info_fipi(url, id_fipi):
     url_completa = url + str(id_fipi)
-    resposta = get(url_completa)
+    resposta = requests.get(url_completa)
 
     if resposta.status_code != 200:
         return
@@ -22,7 +23,7 @@ class FipiIterator():
     def __init__(self, inicio, final):
         self.index = inicio
         self.final = final
-        self.url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas'
+        self.url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos'
         
     def __iter__(self):
         return self
