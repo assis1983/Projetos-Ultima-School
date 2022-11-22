@@ -1,29 +1,28 @@
 import requests
 
 
-def recuperar_info_fipi(url, id_fipi):
-    url_completa = url + str(id_fipi)
+def recuperar_info_fipi(url, id_fipe):
+    url_completa = url + str(id_fipe)
     resposta = requests.get(url_completa)
 
     if resposta.status_code != 200:
         return
 
     resposta_info = resposta.json()
-    tipos = resposta_info['types']
+    
 
-    fipi_info = {
-        'nome': resposta_info['name'],
-        'tipo': ', '.join([tipo['type']['name'] for tipo in tipos]),
-        'numero': resposta_info['id']
+    fipe_info = {
+        'nome': resposta_info['name']
+        
     }
 
-    return fipi_info
+    return fipe_info
 
-class FipiIterator():
+class FipeIterator():
     def __init__(self, inicio, final):
         self.index = inicio
         self.final = final
-        self.url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas/59/modelos'
+        self.url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas'
         
     def __iter__(self):
         return self
@@ -32,24 +31,25 @@ class FipiIterator():
         if self.index > self.final:
             raise StopIteration
 
-        fipi_info = recuperar_info_fipi(self.url, self.index)
+        fipe_info = recuperar_info_fipi(self.url, self.index)
 
-        if not fipi_info:
+        if not fipe_info:
             raise StopIteration
 
         self.index += 1
-        return fipi_info
+        return fipe_info
 
 
 
 if __name__ == '__main__':
-    for fipi in FipiIterator(1, 30):
-        print(f'Marca: {fipi["nome"].capitalize()}')
-        print(f'Carro: {fipi["tipo"].capitalize()}')
-        print(f'Número: {fipi["numero"]}')
-        print('-------------------------------')
+    for fipe in FipeIterator(22, 22):
+        
+        print(f'Marca: {fipe["nome"].capitalize()}')
+        
         
         print('-------------------------------')
+        
+        
        
         
 
