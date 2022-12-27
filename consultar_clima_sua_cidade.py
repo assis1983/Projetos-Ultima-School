@@ -6,7 +6,7 @@ while True:
     url = "https://www.google.com/search?q="+"weather"+cidade
     html = requests.get(url).content  
     soup = BeautifulSoup(html,'html.parser')
-    print('CLIMA')
+    print('CLIMA ATUALIZADO')
     temperatura = soup.find('div', attrs={'class':'BNeawe iBp4i AP7Wnd'}).text
     print('*' * 30)
     print(f'Temperatura {temperatura}')
