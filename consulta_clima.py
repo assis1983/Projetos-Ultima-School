@@ -13,4 +13,4 @@ data = soup.find('div', attrs={'class':'BNeawe tAd8D AP7Wnd'}).text
 print(f'Dia da Semana: {data}')
 info = soup.findAll('div', attrs={'class': 'BNeawe s3v9rd AP7Wnd'})
 dados = info[5].text
-print(dados)
+print(f'Mais informações: {dados}')
