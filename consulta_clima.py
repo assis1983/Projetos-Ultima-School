@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 while True:
-    cidade = str(input('Informe a ciade que deseja consultar: '))
+    cidade = str(input('Informe a ciade que deseja consultar o clima: '))
     url = "https://www.google.com/search?q="+"weather"+cidade
     html = requests.get(url).content  
     soup = BeautifulSoup(html,'html.parser')
