@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas as pd
 
-html = urlopen("https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-2022/dezembro/dia-14-12-2022")
+html = urlopen("https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/2023/01/dia-04-01-2023")
 bs = BeautifulSoup(html, 'html.parser')
 linhas = bs.find_all('tr', {'class':'even'})
 
